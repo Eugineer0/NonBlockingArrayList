@@ -73,7 +73,7 @@ public class Main {
         print_thread.join();
         change_thread.join();
 
-        System.out.println("\n\nпосле работы потоков");
+        System.out.println("\n\nПосле работы потоков");
         printCollection(list);
 
 
@@ -84,16 +84,12 @@ public class Main {
         list1.add("kak");
         list1.add("dela");
 
-//        try {
-//            System.out.println("\n\nЦИКЛ с изменением");
-//            printCollection(true, list1);
-//        }catch (Exception e){
-//            System.out.printf("Standard list throws exceptions at the same task!");
-//        }
-//
-//        System.out.println("\nЦИКЛ без изменением");
-//        printCollection(false, list1);
-
+        try {
+            System.out.println("\n\nПопытка одновременного доступа и редактирования стандартной коллекции");
+            printCollection(true, list1);
+        }catch (Exception e){
+            System.out.printf("Standard list throws exceptions at the same task!");
+        }
     }
 
 }
